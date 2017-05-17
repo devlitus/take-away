@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app/app.component';
+<<<<<<< HEAD
 import { HomeComponent } from "./app/home/home.component";
 import { ContactoComponent } from "./app/contacto/contacto.component";
 import { GaleriaComponent } from "./app/galeria/galeria.component";
@@ -14,6 +15,15 @@ const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'galeria', component: GaleriaComponent },
   { path: 'info', component: InfoComponent },
+=======
+import {  } from ".";
+
+const routes: Routes = [
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', component: AppComponent },
+  // { path: 'home', component: HomeComponent },
+  
+>>>>>>> devel
 ];
 
 @NgModule({
