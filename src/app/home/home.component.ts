@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { TakeService } from "../take.service";
+=======
+>>>>>>> devel
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,7 @@ import { TakeService } from "../take.service";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+<<<<<<< HEAD
   public categoria;
   public plato;
   constructor(private _service: TakeService) {
@@ -41,5 +45,12 @@ export class HomeComponent implements OnInit {
         console.log(err);
       })
   }
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+>>>>>>> devel
 
 }

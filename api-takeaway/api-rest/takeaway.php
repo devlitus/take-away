@@ -6,9 +6,15 @@ $app = new \Slim\Slim();
 
 $db = new mysqli("localhost", "root", "", "takeaway");
 
+<<<<<<< HEAD
 $app->get("/categorias", function() use($db, $app) {
 	// sleep(3);
 	$query = $db->query("SELECT * FROM categoria;");
+=======
+$app->get("/categoria", function() use($db, $app) {
+	// sleep(3);
+	$query = $db->query("SELECT * FROM categorias;");
+>>>>>>> devel
 	$restaurantes = array();
 	while ($fila = $query->fetch_assoc()) {
 		$restaurantes[] = $fila;
@@ -20,7 +26,11 @@ $app->get("/categorias", function() use($db, $app) {
 	echo json_encode($result);
 });
 
+<<<<<<< HEAD
 $app->get("/platos", function() use($db, $app) {
+=======
+$app->get("/plato", function() use($db, $app) {
+>>>>>>> devel
 	// sleep(3);
 	$query = $db->query("SELECT * FROM platos;");
 	$restaurantes = array();

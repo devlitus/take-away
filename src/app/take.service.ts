@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
+<<<<<<< HEAD
 import { Http, Jsonp, URLSearchParams } from "@angular/http";
+=======
+import { Http, URLSearchParams } from "@angular/http";
+>>>>>>> devel
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class TakeService {
 
+<<<<<<< HEAD
   constructor(private _http: Http, private _jsonp: Jsonp) { }
 
   categoria() {
@@ -56,9 +61,29 @@ export class TakeService {
           },
           err => {
           console.log(err);
+=======
+  constructor(public http: Http) { }
+
+  getDatos(search) {
+    const url = 'http://localhost/proyectos_Angular/take-away/api-takeaway/api-rest/takeaway.php/';
+    const param = new URLSearchParams();
+    param.set('/', search);
+    return new Promise(
+      resolve => {
+        this.http.get(url, { params: param })
+          .map(respons => respons.json())
+          .subscribe(data => {
+            resolve(data);
+          },
+          err => {
+            console.log(err);
+>>>>>>> devel
         })
       }
     )
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> devel
 }
