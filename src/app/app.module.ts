@@ -1,11 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
-import { HttpModule, JsonpModule } from '@angular/http';
-=======
 import { HttpModule } from '@angular/http';
->>>>>>> devel
 import { TakeService } from "./take.service";
 import { AppRoutingModule } from "../appRouting";
 import { MaterializeModule } from 'angular2-materialize';
@@ -28,10 +24,6 @@ import { InfoComponent } from './info/info.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-<<<<<<< HEAD
-    JsonpModule,
-=======
->>>>>>> devel
     AppRoutingModule,
     MaterializeModule
   ],
