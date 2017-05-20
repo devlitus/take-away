@@ -2,13 +2,13 @@
   <div class="col s12 m12 l12" *ngFor="let categori of categorias">
     <h3 class="green z-depth-3 white-text center">{{categori.nombre}}</h3>
     <div class="row">
-      <div class="col s12 m4 l4" *ngFor="let plato of platos">
+      <div class="col s12 m4 l4" *ngFor="let plato of platos; let i=index">
         <div class="card" *ngIf="categori.id === plato.id_categoria">
           <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" src="../../assets/imagen/{{plato.foto}}">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">{{plato.nombre}}<i class="material-icons right">more_vert</i></span>
+            <span class="card-title  grey-text text-darken-4">{{plato.nombre}}<a class="btn btn-floating pulse right" (click)="getId(plato.id)"><i class="material-icons">shopping_cart</i></a></span>
             <p><a href="#">{{plato.precio}}€</a></p>
           </div>
           <div class="card-reveal">
