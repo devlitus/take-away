@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
 require_once 'vendor/autoload.php';
 
 $app = new \Slim\Slim();
@@ -8,7 +8,7 @@ $db = new mysqli("localhost", "root", "", "takeaway");
 
 $app->get("/categoria", function() use($db, $app) {
 	// sleep(3);
-	$query = $db->query("SELECT * FROM categorias;");
+	$query = $db->query("SELECT * FROM categoria;");
 	$restaurantes = array();
 	while ($fila = $query->fetch_assoc()) {
 		$restaurantes[] = $fila;
