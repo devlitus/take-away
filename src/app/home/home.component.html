@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="col s12 m12 l12" *ngFor="let categori of categorias">
-    <h3 class="green z-depth-3 white-text center">{{categori.nombre}}</h3>
+  <div class="col s12 m12 l12" *ngFor="let categoria of categorias">
+    <h3 class="green z-depth-3 white-text center">{{categoria.nombre}}</h3>
     <div class="row">
       <div class="col s12 m4 l4" *ngFor="let plato of platos; let i=index">
-        <div class="card" *ngIf="categori.id === plato.id_categoria">
+        <div class="card" *ngIf="categoria.id === plato.id_categoria">
           <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" src="../../assets/imagen/{{plato.foto}}">
           </div>
@@ -16,10 +16,39 @@
             <p>{{plato.descripcion}}</p>
           </div>
         </div>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <table class="striped centered">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+                  <th>Precio/Ración</th>
+                  <th>Cantidad</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngFor="let list of listPedido">
+                  <td>{{list.nombre}}</td>
+                  <td>{{list.descripcion}}</td>
+                  <td>{{list.precio}}€</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
 
 
 
