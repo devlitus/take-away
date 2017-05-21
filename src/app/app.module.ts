@@ -7,7 +7,7 @@ import { AppRoutingModule } from "../appRouting";
 import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent, ModaCarrito } from './home/home.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { InfoComponent } from './info/info.component';
@@ -16,6 +16,7 @@ import { InfoComponent } from './info/info.component';
   declarations: [
     AppComponent,
     HomeComponent,
+    ModaCarrito,
     GaleriaComponent,
     ContactoComponent,
     InfoComponent

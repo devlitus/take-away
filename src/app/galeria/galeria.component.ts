@@ -15,7 +15,9 @@ export class GaleriaComponent implements OnInit {
   }
 
   ngOnInit() {
+    // $('.carousel').carousel();
     $('.carousel.carousel-slider').carousel({ fullWidth: true });
+    
   }
 
   getFoto() {
