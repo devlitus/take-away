@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Directive, Component, OnInit, HostListener, Input } from '@angular/core';
 import { TakeService } from "../take.service";
 
 declare var $: any;
@@ -12,15 +12,17 @@ declare var Materialize: any;
 export class HomeComponent implements OnInit {
   public categorias: Object;
   public platos: Object;
-  // public valor = 0;
+  public pla;
+  public plaNombre;
+  public listPedido = [];
 
   constructor(private _service: TakeService) { 
-    this.getCategoria();
-    this.getPlatos();
+    
   }
 
   ngOnInit() {
-    
+    this.getCategoria();
+    this.getPlatos();
   }
   getCategoria() {
     return this._service.getAllCategorias()
@@ -48,13 +50,32 @@ export class HomeComponent implements OnInit {
       if (this.platos.hasOwnProperty(key)) {
         var element = this.platos[key];
         if (id === element.id) {
+          this.listPedido.push({'nombre': element.nombre, 'descripcion': element.descripcion, 'precio':element.precio});
+          console.log(this.listPedido);   
           console.log('soy el plato ' + element.id);
           Materialize.toast(element.nombre, 4000);
-          // this.valor++;
         }
-        // console.log(id +' '+ element.id);
       }
     }
   }
+  
+}
+@Directive({
+  selector: '[myModal]'
+})
 
+export class ModaCarrito{
+  @Input('click') onclick;
+
+  constructor() {
+    console.log('hola soy Directive');
+    
+  }
+
+  @HostListener('click') onClick() {
+    $('.modal').modal();
+    $('#modal1').modal('open');
+  }
+
+  
 }

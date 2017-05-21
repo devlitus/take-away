@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 17-05-2017 a las 10:11:48
+-- Tiempo de generación: 21-05-2017 a las 09:29:53
 -- Versión del servidor: 10.1.22-MariaDB
 -- Versión de PHP: 7.1.4
 
@@ -30,9 +30,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categoria` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `descripcion` text,
-  `foto` varchar(200) DEFAULT NULL
+  `nombre` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `descripcion` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `foto` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -41,8 +41,8 @@ CREATE TABLE `categoria` (
 
 INSERT INTO `categoria` (`id`, `nombre`, `descripcion`, `foto`) VALUES
 (1, 'Ensaladas', 'Las mejores ensaladas hechas exclusivamente con productos frescos de nuestro mercado local.', 'img/cats/ensaladas.jpg'),
-(2, 'Principales', 'Estos son nuestro platos principales, todos nuestros platos están hechos solo con productos frescos y naturales. Sin aditivos ni conservantes, envasados al vacío.', 'img/cat/principales.jpg'),
-(3, 'Postres', 'Los mejores postres fríos, templados y calientes', 'img/cat/postres.jpg');
+(2, 'Principales', 'Estos son nuestro platos principales, todos nuestros platos est?n hechos solo con productos frescos y naturales. Sin aditivos ni conservantes, envasados al vac?o.', 'img/cat/principales.jpg'),
+(3, 'Postres', 'Los mejores postres frios, templados y calientes', 'img/cat/postres.jpg');
 
 -- --------------------------------------------------------
 
@@ -433,14 +433,14 @@ CREATE TABLE `platos` (
 
 INSERT INTO `platos` (`id`, `nombre`, `precio`, `descripcion`, `foto`, `id_categoria`, `activado`) VALUES
 (1, 'Ensalada de pasta', '4.00', 'La mejor ensalda de pasta', 'ensaldaCat.jpg', 1, 'on'),
-(2, 'Ensalada de higo', '5.00', 'la exquisita ensalada con riqu?simo higo', 'ensalda_higo.jpg', 1, NULL),
+(2, 'Ensalada de higo', '5.00', 'la exquisita ensalada con riquisimo higo', 'ensalda_higo.jpg', 1, NULL),
 (3, 'Ensalada de queso', '5.00', 'La mejor ensalada con queso de cabra', 'ensalada_queso.jpg', 1, 'on'),
-(4, 'Melon con jamon', '3.54', 'El mejor plato del día', 'primero_melon.jpg', 2, 'on'),
+(4, 'Melon con jamon', '3.54', 'El mejor plato del dia', 'primero_melon.jpg', 2, 'on'),
 (5, 'Woock de verduras', '2.54', 'comida casera', 'primeroCat.jpg', 2, 'on'),
 (6, 'Patatas al horno', '3.23', 'exquisitas patatas al horno', 'primero_patata.jpg', 2, 'on'),
-(7, 'Corte de nata', '2.15', 'Corte de nata con perfectos granos de café', 'postre_corte.jpg', 3, 'null'),
-(8, 'Pastel de frutas', '2.25', 'Riquísimo pastel de frutas del bosque ', 'postre_fruta.jpg', 3, 'on'),
-(9, 'Browne de chocolate', '2.35', 'Riquísimo Browne de chocolate al 75%  ', 'postreCat.jpg', 3, 'on');
+(7, 'Corte de nata', '2.15', 'Corte de nata con perfectos granos de cafe', 'postre_corte.jpg', 3, 'null'),
+(8, 'Pastel de frutas', '2.25', 'Riquisimo pastel de frutas del bosque ', 'postre_fruta.jpg', 3, 'on'),
+(9, 'Browne de chocolate', '2.35', 'Riquisimo Browne de chocolate al puro ', 'postreCat.jpg', 3, 'on');
 
 --
 -- Índices para tablas volcadas
@@ -496,7 +496,7 @@ ALTER TABLE `platos`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
