@@ -10,29 +10,28 @@ declare var $: any;
 })
 export class GaleriaComponent implements OnInit {
   public fotos = [];
-  constructor(private _service: TakeService) { 
+  constructor(private _service: TakeService) {
     this.getFoto();
   }
 
   ngOnInit() {
-    // $('.carousel').carousel();
-    $('.carousel.carousel-slider').carousel({ fullWidth: true });
-    
+    $('.carousel').carousel();
+    // $('.carousel.carousel-slider').carousel({ fullWidth: true });
   }
 
   getFoto() {
     return this._service.getAllPlatos()
-      .then(result => { 
+      .then(result => {
         let fotos = result;
         for (var key in fotos) {
           if (fotos.hasOwnProperty(key)) {
             var element = fotos[key];
             this.fotos = element.foto;
-            console.log(this.fotos);   
+            // console.log(this.fotos);
           }
         }
       })
-      .catch(err => { 
+      .catch(err => {
         console.log(err);
       })
   }
