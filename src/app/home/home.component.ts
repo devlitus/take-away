@@ -1,3 +1,5 @@
+import { isNumber } from 'util';
+import { forEach } from '@angular/router/src/utils/collection';
 import { Directive, Component, OnInit, HostListener, Input } from '@angular/core';
 import { TakeService } from "../take.service";
 
@@ -15,6 +17,7 @@ export class HomeComponent implements OnInit {
   public pla;
   public plaNombre;
   public listPedido = [];
+  public total: number = 0;
 
   constructor(private _service: TakeService) { 
     
@@ -28,7 +31,7 @@ export class HomeComponent implements OnInit {
     return this._service.getAllCategorias()
       .then(result => { 
         this.categorias = result;
-        console.log(this.categorias);
+        // console.log(this.categorias);
       })
       .catch(err => {
         console.log(err);
@@ -39,7 +42,7 @@ export class HomeComponent implements OnInit {
     return this._service.getAllPlatos()
       .then(result => {
         this.platos = result;
-        console.log(this.platos);
+        // console.log(this.platos);
       })
       .catch(err => {
         console.log(err);
@@ -51,14 +54,23 @@ export class HomeComponent implements OnInit {
         var element = this.platos[key];
         if (id === element.id) {
           this.listPedido.push({'nombre': element.nombre, 'descripcion': element.descripcion, 'precio':element.precio});
-          console.log(this.listPedido);   
-          console.log('soy el plato ' + element.id);
+            
+          // console.log('soy el plato ' + element.id);
           Materialize.toast(element.nombre, 4000);
         }
       }
     }
+    this.totalCompra();
+   
+/*     console.log(this.total);
+    console.log(this.listPedido); */
   }
-  
+  totalCompra() {
+    for (var key in this.listPedido) {
+      var precios = parseFloat(this.listPedido[key].precio);
+    }
+    return this.total = this.total + precios;
+  }
 }
 @Directive({
   selector: '[myModal]'
@@ -68,7 +80,6 @@ export class ModaCarrito{
   @Input('click') onclick;
 
   constructor() {
-    console.log('hola soy Directive');
     
   }
 

@@ -8,7 +8,7 @@ export class TakeService {
   constructor(public http: Http) { }
 
   getAllCategorias() {
-    const url = 'http://localhost/Proyectos_Angular/take-away/api-takeaway/api-rest/takeaway.php/categoria';
+    const url = 'http://localhost/takeaway/api-takeaway/api-rest/takeaway.php/categoria';
   
     return new Promise(
       resolve => {
@@ -25,7 +25,7 @@ export class TakeService {
   }
 
   getAllPlatos() {
-    const url = 'http://localhost/Proyectos_Angular/take-away/api-takeaway/api-rest/takeaway.php/plato';
+    const url = 'http://localhost/takeaway/api-takeaway/api-rest/takeaway.php/plato';
 
     return new Promise(
       resolve => {
