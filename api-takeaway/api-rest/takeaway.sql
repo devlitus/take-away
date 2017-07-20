@@ -432,8 +432,8 @@ CREATE TABLE `platos` (
 --
 
 INSERT INTO `platos` (`id`, `nombre`, `precio`, `descripcion`, `foto`, `id_categoria`, `activado`) VALUES
-(1, 'Ensalada de pasta', '4.00', 'La mejor ensalda de pasta', 'ensaldaCat.jpg', 1, 'on'),
-(2, 'Ensalada de higo', '5.00', 'la exquisita ensalada con riquisimo higo', 'ensalda_higo.jpg', 1, NULL),
+(1, 'Ensalada de pasta', '4.00', 'La mejor ensalda de pasta', 'ensaladaCat.jpg', 1, 'on'),
+(2, 'Ensalada de higo', '5.00', 'la exquisita ensalada con riquisimo higo', 'ensalada_higo.jpg', 1, NULL),
 (3, 'Ensalada de queso', '5.00', 'La mejor ensalada con queso de cabra', 'ensalada_queso.jpg', 1, 'on'),
 (4, 'Melon con jamon', '3.54', 'El mejor plato del dia', 'primero_melon.jpg', 2, 'on'),
 (5, 'Woock de verduras', '2.54', 'comida casera', 'primeroCat.jpg', 2, 'on'),
