@@ -4,7 +4,7 @@ require_once 'vendor/autoload.php';
 
 $app = new \Slim\Slim();
 
-$db = new mysqli("localhost", "root", "", "takeaway");
+$db = new mysqli("mysql.hostinger.es", "u257418126_away", "SolNaciente38", "u257418126_takea");
 
 $app->get("/categoria", function() use($db, $app) {
 	// sleep(3);
@@ -158,7 +158,7 @@ $app->get("/delete-restaurante/:id", function($id) use($db, $app) {
 
 
 $app->post("/upload-file", function() use($db, $app) {
-	
+
 	$result = array("status" => "error", "message" => "The file could not be uploaded");
 
 	if (isset($_FILES["uploads"])) {
@@ -167,7 +167,7 @@ $app->post("/upload-file", function() use($db, $app) {
 		$upload = $piramideUploader->upload("image", "uploads", "uploads", array("image/jpeg", "image/png", "image/gif"));
 		$file = $piramideUploader->getInfoFile();
 		$file_name = $file["complete_name"];
-		
+
 		if (isset($upload) && $upload["uploaded"] == false) {
 			$result = array("status" => "error",
 				"message" => $upload["error"]);
@@ -177,7 +177,7 @@ $app->post("/upload-file", function() use($db, $app) {
 				"filename"=>$file_name);
 		}
 	}
-	
+
 	echo json_encode($result);
 });
 
